@@ -1,18 +1,18 @@
 #include <hcut/lang/Parser.h>
 
-bool hcut::lang::Parser::Parse(std::istream &stream)
+bool hcut::lang::Parser::Parse(std::istream& stream)
 {
-    if (!stream)
-        return false;
+	if (!stream)
+		return false;
 
-    Parser parser(stream);
+	Parser parser(stream);
 
-    parser.Next();
-    while (!parser.AtEOF())
-    {
-        auto &tk = parser.Next();
-        std::cout << tk << std::endl;
-    }
+	parser.Next();
+	while (!parser.AtEOF())
+	{
+		auto& tk = parser.Next();
+		std::cout << tk << std::endl;
+	}
 
-    return true;
+	return true;
 }

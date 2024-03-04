@@ -4,21 +4,21 @@
 
 namespace hcut::lang
 {
-    enum TokenType
-    {
-        TK_EOF = -1,
+	enum TokenType
+	{
+		TK_EOF = -1,
 
-        TK_IDENTIFIER,
+		TK_IDENTIFIER,
 
-        TK_NUMBER,
-        TK_CHAR,
-        TK_STRING,
+		TK_NUMBER,
+		TK_CHAR,
+		TK_STRING,
 
-        TK_OPERATOR,
-    };
+		TK_OPERATOR,
+	};
 
-    struct Token;
-    std::ostream &operator<<(std::ostream &out, const Token &token);
+	struct Token;
+	std::ostream& operator<<(std::ostream& out, const Token& token);
 
-    class Parser;
+	class Parser;
 }
