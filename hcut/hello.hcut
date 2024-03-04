@@ -1,0 +1,7 @@
+void printf: char* format, ...
+
+int main: int argc, char** argv
+{
+    printf("Hello World!")
+    result 0
+}
