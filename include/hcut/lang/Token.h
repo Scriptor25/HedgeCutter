@@ -9,10 +9,13 @@ namespace hcut::lang
 	struct Token
 	{
 		Token()
-			: Line(0), Type(TK_EOF), Value(1, char(-1)) {}
+			: Token(0, TK_EOF, "") {}
+
+		Token(size_t line)
+			: Token(line, TK_EOF, "") {}
 
 		Token(size_t line, TokenType type, char value)
-			: Line(line), Type(type), Value(1, value) {}
+			: Token(line, type, std::string(1, value)) {}
 
 		Token(size_t line, TokenType type, const std::string& value)
 			: Line(line), Type(type), Value(value) {}

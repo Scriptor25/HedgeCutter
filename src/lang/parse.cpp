@@ -6,12 +6,11 @@ bool hcut::lang::Parser::Parse(std::istream& stream)
 		return false;
 
 	Parser parser(stream);
-
 	parser.Next();
 	while (!parser.AtEOF())
 	{
-		auto& tk = parser.Next();
-		std::cout << tk << std::endl;
+		auto stmt = parser.NextStmt();
+		std::cout << stmt << std::endl;
 	}
 
 	return true;

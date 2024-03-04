@@ -1,0 +1,27 @@
+def char* string ## alias string for char*
+
+void printf: string format, ... ## undefined function
+
+int fib: int n =
+    n == 0
+        ? 0
+        : n == 1
+        ? 1
+        : fib(n - 1) + fib(n - 2)
+
+#
+    main function:
+        takes argc and argv
+#
+int main: int argc, string* argv = {
+    int n = 10
+    int f = fib(n) ## compute fib of n
+
+    #
+        Use printf to output to console
+    #
+    printf("Hello World!\r\n")
+    printf("Fib of {} = {}\r\n", n, f) ## output results
+
+    result f ## return f as the result
+}

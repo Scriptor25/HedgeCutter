@@ -1,14 +1,16 @@
 #include <hcut/HCut.h>
 #include <hcut/lang/Parser.h>
-#include <stdio.h>
+
+#include <filesystem>
 #include <fstream>
+#include <stdio.h>
 
 int main(int argc, const char** argv)
 {
 	for (int i = 0; i < argc; i++)
 		printf("%s\r\n", argv[i]);
 
-	std::ifstream stream("../hcut/main.hcut");
+	std::ifstream stream("../res/hcut/fib.hcut");
 
 	if (!hcut::lang::Parser::Parse(stream))
 	{
