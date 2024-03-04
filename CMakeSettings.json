@@ -6,11 +6,8 @@
       "configurationType": "Debug",
       "inheritEnvironments": [ "msvc_x86_x64" ],
       "buildRoot": "${projectDir}\\build\\${name}",
-      "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "",
-      "buildCommandArgs": "",
-      "ctestCommandArgs": "",
-      "intelliSenseMode": "windows-msvc-x64"
+      "installRoot": "${projectDir}\\install\\${name}",
+      "ctestCommandArgs": ""
     }
   ]
 }
