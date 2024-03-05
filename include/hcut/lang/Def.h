@@ -4,94 +4,112 @@
 
 namespace hcut::lang
 {
-	enum TokenType
-	{
-		TK_EOF = -1,
+    enum TokenType
+    {
+        TK_EOF = -1,
 
-		TK_IDENTIFIER,
+        TK_IDENTIFIER,
 
-		TK_DEC_NUMBER,
-		TK_HEX_NUMBER,
-		TK_BIN_NUMBER,
+        TK_DEC_NUMBER,
+        TK_HEX_NUMBER,
+        TK_BIN_NUMBER,
 
-		TK_CHAR,
-		TK_STRING,
+        TK_CHAR,
+        TK_STRING,
 
-		TK_OPERATOR,
-	};
-	std::ostream& operator<<(std::ostream& out, const TokenType& type);
+        TK_OPERATOR,
+    };
 
-	struct Token;
-	std::ostream& operator<<(std::ostream& out, const Token& token);
+    std::ostream &operator<<(std::ostream &out, const TokenType &type);
 
-	class Parser;
+    struct Token;
 
-	struct Type;
-	struct PtrType;
-	struct RefType;
-	struct ArrType;
+    std::ostream &operator<<(std::ostream &out, const Token &token);
 
-	typedef Type* TypePtr;
-	typedef PtrType* PtrTypePtr;
-	typedef RefType* RefTypePtr;
-	typedef ArrType* ArrTypePtr;
+    class Parser;
 
-	std::ostream& operator<<(std::ostream& out, const TypePtr& ptr);
-	std::ostream& operator<<(std::ostream& out, const Type& type);
+    struct Type;
+    struct PtrType;
+    struct RefType;
+    struct ArrType;
 
-	struct Symbol;
-	typedef Symbol* SymbolPtr;
-	std::ostream& operator<<(std::ostream& out, const SymbolPtr& ptr);
-	std::ostream& operator<<(std::ostream& out, const Symbol& symbol);
+    typedef Type *TypePtr;
+    typedef PtrType *PtrTypePtr;
+    typedef RefType *RefTypePtr;
+    typedef ArrType *ArrTypePtr;
 
-	struct Stmt;
-	struct BrkStmt;
-	struct DefStmt;
-	struct SymStmt;
-	struct IfStmt;
-	struct ResStmt;
-	struct SeqStmt;
+    std::ostream &operator<<(std::ostream &out, const TypePtr &ptr);
 
-	typedef Stmt* StmtPtr;
-	typedef BrkStmt* BrkStmtPtr;
-	typedef DefStmt* DefStmtPtr;
-	typedef SymStmt* SymStmtPtr;
-	typedef IfStmt* IfStmtPtr;
-	typedef ResStmt* ResStmtPtr;
-	typedef SeqStmt* SeqStmtPtr;
+    std::ostream &operator<<(std::ostream &out, const Type &type);
 
-	std::ostream& operator<<(std::ostream& out, const StmtPtr& ptr);
-	std::ostream& operator<<(std::ostream& out, const BrkStmt& stmt);
-	std::ostream& operator<<(std::ostream& out, const DefStmt& stmt);
-	std::ostream& operator<<(std::ostream& out, const SymStmt& stmt);
-	std::ostream& operator<<(std::ostream& out, const IfStmt& stmt);
-	std::ostream& operator<<(std::ostream& out, const ResStmt& stmt);
-	std::ostream& operator<<(std::ostream& out, const SeqStmt& stmt);
+    struct Symbol;
+    typedef Symbol *SymbolPtr;
 
-	struct Expr;
-	struct BinExpr;
-	struct CallExpr;
-	struct ChrExpr;
-	struct IdExpr;
-	struct IntExpr;
-	struct SelExpr;
-	struct StrExpr;
+    std::ostream &operator<<(std::ostream &out, const SymbolPtr &ptr);
 
-	typedef Expr* ExprPtr;
-	typedef BinExpr* BinExprPtr;
-	typedef CallExpr* CallExprPtr;
-	typedef ChrExpr* ChrExprPtr;
-	typedef IdExpr* IdExprPtr;
-	typedef IntExpr* IntExprPtr;
-	typedef SelExpr* SelExprPtr;
-	typedef StrExpr* StrExprPtr;
+    std::ostream &operator<<(std::ostream &out, const Symbol &symbol);
 
-	std::ostream& operator<<(std::ostream& out, const ExprPtr& ptr);
-	std::ostream& operator<<(std::ostream& out, const BinExpr& stmt);
-	std::ostream& operator<<(std::ostream& out, const CallExpr& stmt);
-	std::ostream& operator<<(std::ostream& out, const ChrExpr& stmt);
-	std::ostream& operator<<(std::ostream& out, const IdExpr& stmt);
-	std::ostream& operator<<(std::ostream& out, const IntExpr& stmt);
-	std::ostream& operator<<(std::ostream& out, const SelExpr& stmt);
-	std::ostream& operator<<(std::ostream& out, const StrExpr& stmt);
+    struct Stmt;
+    struct BrkStmt;
+    struct DefStmt;
+    struct SymStmt;
+    struct IfStmt;
+    struct ResStmt;
+    struct SeqStmt;
+
+    typedef Stmt *StmtPtr;
+    typedef BrkStmt *BrkStmtPtr;
+    typedef DefStmt *DefStmtPtr;
+    typedef SymStmt *SymStmtPtr;
+    typedef IfStmt *IfStmtPtr;
+    typedef ResStmt *ResStmtPtr;
+    typedef SeqStmt *SeqStmtPtr;
+
+    std::ostream &operator<<(std::ostream &out, const StmtPtr &ptr);
+
+    std::ostream &operator<<(std::ostream &out, const BrkStmt &stmt);
+
+    std::ostream &operator<<(std::ostream &out, const DefStmt &stmt);
+
+    std::ostream &operator<<(std::ostream &out, const SymStmt &stmt);
+
+    std::ostream &operator<<(std::ostream &out, const IfStmt &stmt);
+
+    std::ostream &operator<<(std::ostream &out, const ResStmt &stmt);
+
+    std::ostream &operator<<(std::ostream &out, const SeqStmt &stmt);
+
+    struct Expr;
+    struct BinExpr;
+    struct CallExpr;
+    struct ChrExpr;
+    struct IdExpr;
+    struct IntExpr;
+    struct SelExpr;
+    struct StrExpr;
+
+    typedef Expr *ExprPtr;
+    typedef BinExpr *BinExprPtr;
+    typedef CallExpr *CallExprPtr;
+    typedef ChrExpr *ChrExprPtr;
+    typedef IdExpr *IdExprPtr;
+    typedef IntExpr *IntExprPtr;
+    typedef SelExpr *SelExprPtr;
+    typedef StrExpr *StrExprPtr;
+
+    std::ostream &operator<<(std::ostream &out, const ExprPtr &ptr);
+
+    std::ostream &operator<<(std::ostream &out, const BinExpr &stmt);
+
+    std::ostream &operator<<(std::ostream &out, const CallExpr &stmt);
+
+    std::ostream &operator<<(std::ostream &out, const ChrExpr &stmt);
+
+    std::ostream &operator<<(std::ostream &out, const IdExpr &stmt);
+
+    std::ostream &operator<<(std::ostream &out, const IntExpr &stmt);
+
+    std::ostream &operator<<(std::ostream &out, const SelExpr &stmt);
+
+    std::ostream &operator<<(std::ostream &out, const StrExpr &stmt);
 }

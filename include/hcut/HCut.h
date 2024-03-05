@@ -1,5 +1,3 @@
 #pragma once
 
-namespace hcut
-{
-}
+namespace hcut {}
