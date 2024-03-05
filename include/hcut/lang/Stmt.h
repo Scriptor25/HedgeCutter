@@ -12,11 +12,6 @@ namespace hcut::lang
         virtual ~Stmt() {}
     };
 
-    struct BrkStmt : Stmt
-    {
-        static BrkStmtPtr Create() { return new BrkStmt(); }
-    };
-
     struct DefStmt : Stmt
     {
         static DefStmtPtr Create(TypePtr type, const std::string &name)

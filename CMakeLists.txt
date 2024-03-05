@@ -4,9 +4,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 file(GLOB_RECURSE src "src/**.cpp")
+file(GLOB_RECURSE inc "include/**.h")
 
 project(HedgeCutter)
-add_executable(HedgeCutter "${src}" "include/hcut/lang/Stmt.h")
+add_executable(HedgeCutter "${src}" "${inc}")
 
 target_include_directories(HedgeCutter PUBLIC "include")
 

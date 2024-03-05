@@ -10,7 +10,7 @@ int main(int argc, const char **argv)
     for (int i = 0; i < argc; i++)
         printf("%s\r\n", argv[i]);
 
-    std::ifstream stream("../res/hcut/fib.hcut");
+    std::ifstream stream("../res/hcut/hello.hcut");
 
     if (!hcut::lang::Parser::Parse(stream))
     {

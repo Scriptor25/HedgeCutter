@@ -8,7 +8,6 @@ std::ostream &hcut::lang::operator<<(std::ostream &out, const StmtPtr &ptr)
     if (!ptr)
         return out << "NULL";
 
-    if (auto p = dynamic_cast<BrkStmtPtr>(ptr)) return out << *p;
     if (auto p = dynamic_cast<DefStmtPtr>(ptr)) return out << *p;
     if (auto p = dynamic_cast<SymStmtPtr>(ptr)) return out << *p;
     if (auto p = dynamic_cast<IfStmtPtr>(ptr)) return out << *p;
@@ -19,8 +18,6 @@ std::ostream &hcut::lang::operator<<(std::ostream &out, const StmtPtr &ptr)
 
     throw;
 }
-
-std::ostream &hcut::lang::operator<<(std::ostream &out, const BrkStmt &stmt) { return out << "break"; }
 
 std::ostream &hcut::lang::operator<<(std::ostream &out, const DefStmt &stmt) { return out << "def " << stmt.Symbol; }
 
@@ -61,15 +58,21 @@ std::ostream &hcut::lang::operator<<(std::ostream &out, const ResStmt &stmt) { r
 
 std::ostream &hcut::lang::operator<<(std::ostream &out, const SeqStmt &stmt)
 {
+    static size_t level = 0;
+
     out << "{" << std::endl;
+    std::string spaces;
+    for (size_t i = 0; i < level; i++)
+        spaces += "\t";
+    level++;
     for (auto ptr: stmt.Sequence)
-        out << ptr << std::endl;
-    return out << "}";
+        out << spaces << "\t" << ptr << std::endl;
+    level--;
+    return out << spaces << "}";
 }
 
 hcut::lang::StmtPtr hcut::lang::Parser::NextStmt()
 {
-    if (At("break")) return NextBrkStmt();
     if (At("def")) return NextDefStmt();
     if (At("if")) return NextIfStmt();
     if (At("result")) return NextResStmt();
@@ -80,12 +83,6 @@ hcut::lang::StmtPtr hcut::lang::Parser::NextStmt()
         return NextSymStmt(p->Value);
 
     return expr;
-}
-
-hcut::lang::BrkStmtPtr hcut::lang::Parser::NextBrkStmt()
-{
-    Skip("break");
-    return BrkStmt::Create();
 }
 
 hcut::lang::DefStmtPtr hcut::lang::Parser::NextDefStmt()

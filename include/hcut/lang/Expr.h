@@ -65,13 +65,13 @@ namespace hcut::lang
     {
         static IntExprPtr Create(const std::string &value, int radix)
         {
-            return new IntExpr(std::stoull(value, nullptr, radix));
+            return new IntExpr(std::stoi(value, nullptr, radix));
         }
 
-        IntExpr(size_t value)
+        IntExpr(int value)
             : Value(value) {}
 
-        size_t Value;
+        int Value;
     };
 
     struct SelExpr : Expr

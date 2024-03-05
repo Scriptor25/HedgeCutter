@@ -48,8 +48,6 @@ namespace hcut::lang
 
         StmtPtr NextStmt();
 
-        BrkStmtPtr NextBrkStmt();
-
         DefStmtPtr NextDefStmt();
 
         SymStmtPtr NextSymStmt(const std::string &resultname);

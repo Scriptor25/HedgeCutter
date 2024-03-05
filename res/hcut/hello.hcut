@@ -1,7 +1,8 @@
+def int16 char
+
 void printf: char* format, ...
 
-int main: int argc, char** argv
-{
-    printf("Hello World!")
+int main: int argc, char** argv = {
+    printf("Hello World!\r\n")
     result 0
 }

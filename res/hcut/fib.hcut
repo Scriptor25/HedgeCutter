@@ -1,3 +1,4 @@
+def int16 char
 def char* string ## alias string for char*
 
 void printf: string format, ... ## undefined function

@@ -50,7 +50,6 @@ namespace hcut::lang
     std::ostream &operator<<(std::ostream &out, const Symbol &symbol);
 
     struct Stmt;
-    struct BrkStmt;
     struct DefStmt;
     struct SymStmt;
     struct IfStmt;
@@ -58,7 +57,6 @@ namespace hcut::lang
     struct SeqStmt;
 
     typedef Stmt *StmtPtr;
-    typedef BrkStmt *BrkStmtPtr;
     typedef DefStmt *DefStmtPtr;
     typedef SymStmt *SymStmtPtr;
     typedef IfStmt *IfStmtPtr;
@@ -66,8 +64,6 @@ namespace hcut::lang
     typedef SeqStmt *SeqStmtPtr;
 
     std::ostream &operator<<(std::ostream &out, const StmtPtr &ptr);
-
-    std::ostream &operator<<(std::ostream &out, const BrkStmt &stmt);
 
     std::ostream &operator<<(std::ostream &out, const DefStmt &stmt);
 
